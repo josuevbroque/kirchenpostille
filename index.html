@@ -1,0 +1,278 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#F3EEDF">
+<title>Luther's Church Postil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF8F4;--surface:#FFFFFF;--ink:#1F1D1A;--soft:#6B665E;--rule:#E7E2D8;--cor:#3B6E4F;--cs:#3B6E4F14;--ts:1;--g:47,168,102;--serif:'Newsreader',Georgia,serif;--sans:'Inter',system-ui,-apple-system,sans-serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}html{font-size:calc(100% * var(--ts))}
+body{display:block;height:100dvh;overflow:hidden;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.5;-webkit-font-smoothing:antialiased}
+button{font-family:var(--sans);font-size:.8rem;font-weight:500;border:1px solid var(--rule);background:var(--surface);color:var(--ink);padding:9px 14px;min-height:38px;border-radius:10px;cursor:pointer;transition:background .15s,border-color .15s,color .15s;touch-action:manipulation}
+button:hover{border-color:var(--cor);color:var(--cor)}button:focus-visible{outline:2px solid var(--cor);outline-offset:2px}
+button.primary{background:var(--cor);border-color:var(--cor);color:#fff}button.primary:hover{color:#fff;filter:brightness(1.08)}
+.ghost{border-color:transparent!important;background:transparent!important;color:var(--soft)}
+.eyebrow{font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+
+/* reader */
+.reader{position:fixed;inset:0;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top)}
+.rtop{display:flex;align-items:center;gap:12px;height:52px;padding:0 72px 0 24px;font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.04em;color:var(--soft);white-space:nowrap}
+.rtop #rt{overflow:hidden;text-overflow:ellipsis}.rtop #rk{margin-left:auto;color:var(--cor);font-weight:600}
+.col{flex:1;min-height:0;width:100%;max-width:720px;margin:0 auto;padding:4px 28px 0;display:flex;flex-direction:column}
+.vp{flex:1;min-height:0;overflow:hidden;position:relative}
+.flow{height:100%;width:100%;position:relative;transition:transform .5s cubic-bezier(.4,.05,.2,1)}
+.texto{font-size:1.18rem;line-height:1.8;letter-spacing:.003em}
+.texto p{margin:0 0 .85em;text-align:left;hyphens:manual}
+.flow p,.flow .para p,.flow .txt{break-inside:avoid}
+.texto .para{margin-bottom:1.3em}.texto .para p:last-child{margin-bottom:0}
+.pn{display:block;width:fit-content;margin:0 0 .3em;font-family:var(--sans);font-size:.66rem;font-weight:600;color:var(--cor);letter-spacing:.06em}
+.pn::before{content:"¶ "}
+.texto .txt{font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);font-style:normal;margin-bottom:1em}
+.texto .scr{font-style:italic;line-height:1.75;margin:0 0 1em;padding:2px 0 2px 16px;border-left:2px solid var(--cor);background:none;font-size:1em}
+.vn{font-family:var(--sans);font-size:.6em;color:var(--cor);font-weight:600;font-style:normal;margin-right:1px}
+.sh{font-family:var(--sans);font-size:.95rem;font-weight:600;color:var(--cor);margin:1.4em 0 .8em;line-height:1.35;break-after:avoid;break-inside:avoid;scroll-margin-top:60px}
+.stitle{break-inside:avoid;margin:0 0 1.4em}.stitle h2{font-weight:500;font-size:1.5rem;line-height:1.25;margin:.3em 0 0}
+.lb{font-family:var(--sans);font-weight:600;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cor)}
+
+/* cover */
+.cover{height:99%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;break-after:column;break-inside:avoid;padding:0 6px}
+.clb{font-family:var(--sans);font-weight:600;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cor)}
+.cd{font-weight:500;font-size:clamp(2.3rem,9vw,4rem);line-height:1.08;letter-spacing:-.02em;margin:.4em 0 .6em}
+.cd::after{content:"";display:block;width:40px;height:2px;background:var(--cor);margin:.6em auto 0}
+.cref{font-style:italic;font-size:clamp(1.25rem,4.5vw,1.7rem);color:var(--soft)}
+.csub{margin-top:.8em;font-size:.95rem;color:var(--soft);max-width:34ch;line-height:1.45}
+.chint{margin-top:2.6em;font-family:var(--sans);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cor);opacity:.85}
+
+/* bottom bar */
+.rbar{display:flex;align-items:center;justify-content:center;gap:20px;padding:10px 0 calc(14px + env(safe-area-inset-bottom));background:var(--bg)}
+.rbar .pg{width:48px;height:40px;padding:0;font-size:1.3rem;line-height:1;border-radius:20px}.rbar .pg:disabled{opacity:.25;pointer-events:none}
+#pi{font-family:var(--sans);font-size:.76rem;color:var(--soft);min-width:80px;text-align:center;font-variant-numeric:tabular-nums}
+
+/* menu button */
+#fab{position:fixed;top:calc(8px + env(safe-area-inset-top));right:14px;z-index:12;width:40px;height:40px;min-height:0;padding:0;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:var(--surface)}
+#fab i{display:block;width:16px;height:1.5px;background:var(--ink);border-radius:1px}
+#fab:hover i{background:var(--cor)}
+
+/* drawer */
+.scrim{position:fixed;inset:0;z-index:14;background:#1f1d1a66;opacity:0;pointer-events:none;transition:opacity .25s}.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(400px,92vw);z-index:15;background:var(--bg);padding:calc(16px + env(safe-area-inset-top)) 22px calc(30px + env(safe-area-inset-bottom));overflow-y:auto;transform:translateX(105%);transition:transform .3s cubic-bezier(.3,.05,.2,1);box-shadow:-16px 0 40px -20px #0004}
+.drawer.open{transform:none}
+.dh{display:flex;align-items:center;justify-content:space-between}
+.masthead{margin:14px 0 8px}.drawer h1{font-weight:500;font-size:1.7rem;margin:0 0 .2em;letter-spacing:-.01em;line-height:1.15}
+.data{font-style:italic;font-size:1.05rem;color:var(--soft)}
+.badge{display:inline-block;margin-top:12px;padding:4px 10px;border-radius:6px;background:var(--cs);color:var(--cor);font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.season-name{margin-top:22px;font-size:1.3rem;font-weight:500;line-height:1.25}
+.day-name{font-family:var(--sans);font-size:.76rem;color:var(--soft);margin-top:2px}
+.note{font-family:var(--sans);font-size:.76rem;line-height:1.5;color:var(--soft);margin-top:12px;padding:10px 12px;border-radius:8px;background:var(--cs)}
+.day-nav{display:flex;gap:8px;margin-top:18px}
+.nv{flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;padding:10px 12px;line-height:1.25;border-radius:10px}
+#next{align-items:flex-end;text-align:right}
+.nv small{font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);font-weight:500}.nv b{font-family:var(--serif);font-weight:500;font-size:.9rem}
+.back{border-color:var(--cor);color:var(--cor)}
+.dsec{font-family:var(--sans);font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:26px 0 8px}
+.li{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:1px solid transparent;background:transparent;border-radius:8px;padding:8px 10px;min-height:0;font-family:var(--serif);font-size:1rem;font-weight:400}
+.li i{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.li:hover{background:var(--cs);border-color:transparent}.li.on{background:var(--cs);color:var(--cor);font-weight:500}
+.drawer .li{flex-direction:column;align-items:flex-start;gap:2px;margin-bottom:2px}
+.drawer .li b{font-family:var(--sans);font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cor)}
+.drawer .li span{font-size:.95rem;line-height:1.35}
+#secs .li{font-size:.92rem;padding:6px 10px}
+.tools{display:flex;gap:8px;flex-wrap:wrap}.tools button{flex:1 1 auto}
+.size{display:flex;align-items:center;gap:6px;margin-top:18px;font-family:var(--sans);font-size:.76rem;color:var(--soft)}.size span{margin-right:auto}
+.size button{padding:6px 10px;min-height:0;border-radius:8px}.size button.on{background:var(--cor);border-color:var(--cor);color:#fff}
+.aviso{margin:24px 0 0;font-family:var(--sans);font-size:.72rem;line-height:1.5;color:var(--soft)}
+
+/* overlays */
+.overlay{position:fixed;inset:0;z-index:20;background:#1f1d1a73;display:flex;align-items:center;justify-content:center;padding:16px}.overlay[hidden]{display:none}
+.panel{width:100%;max-width:420px;max-height:calc(100dvh - 32px);overflow:auto;background:var(--bg);border-radius:16px;padding:18px;box-shadow:0 24px 60px -20px #0006}
+.ch{display:flex;align-items:center;gap:8px;margin-bottom:12px}.ch button{min-height:34px;min-width:34px;padding:0 10px}
+#ml,#ml2{flex:1;text-align:center;font-family:var(--sans);font-weight:600;font-size:.9rem;text-transform:capitalize}#ml2{text-align:left;text-transform:none}
+.wd,.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.wd{text-align:center;font-family:var(--sans);font-size:.66rem;color:var(--soft);margin-bottom:6px}
+.cell{aspect-ratio:1;padding:0;min-height:0;border:1px solid transparent;background:transparent;border-radius:8px;font-size:.8rem;position:relative;display:flex;align-items:center;justify-content:center}
+.cell.mk{font-weight:600;border-width:1.5px}.cell.mk::after{content:"";position:absolute;bottom:4px;width:3px;height:3px;border-radius:50%;background:currentColor}
+.cell.td{box-shadow:0 0 0 1.5px var(--ink) inset}.cell.sel{background:var(--cor)!important;color:#fff!important;border-color:var(--cor)!important}.cell.empty{visibility:hidden}
+#alist .sec{font-family:var(--sans);font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:16px 0 4px}#alist .sec:first-child{margin-top:0}
+
+/* about */
+.about{max-width:520px;padding:28px 26px}
+.about h2{font-weight:500;font-size:1.9rem;line-height:1.15;margin:.2em 0 .4em;letter-spacing:-.01em}
+.about h3{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--cor);margin:1.6em 0 .5em}
+.about p,.about li{font-size:1rem;line-height:1.6;margin:0 0 .6em}.about .lead{font-size:1.12rem;color:var(--soft)}
+.about ul{padding-left:1.1em;margin:0}.about li::marker{color:var(--cor)}
+.about .primary{width:100%;margin-top:1.4em;padding:12px;font-size:.88rem}
+
+@media(max-width:480px){.col{padding:4px 20px 0}.texto{font-size:1.08rem}.rtop{padding-left:20px}}
+
+
+.rbar{background:transparent}
+.flow .scr,.flow .para p{break-inside:auto;orphans:2;widows:2}
+.flow .para{break-inside:auto}
+
+html{background:var(--bg)}
+.glow{position:fixed;inset:0;z-index:0;pointer-events:none;transition:background .4s;background:radial-gradient(90% 60% at 0% -5%,rgba(var(--g),.21),rgba(var(--g),0) 75%),radial-gradient(90% 60% at 100% 105%,rgba(var(--g),.21),rgba(var(--g),0) 75%),rgba(var(--g),.021)}
+.reader{z-index:1}
+
+
+/* centering (menu, panels) */
+.drawer,.about,.panel{text-align:center}
+.dh{justify-content:space-between}.dh .eyebrow{flex:1;padding-left:38px}
+.drawer .li{align-items:center;text-align:center}
+.nv,#next{align-items:center;text-align:center}
+.size{justify-content:center}.size span{margin-right:8px;width:100%;text-align:center;margin-bottom:4px}.size{flex-wrap:wrap}
+#alist .li{justify-content:center;text-align:center}
+.about ul{list-style:none;padding:0}
+.about h3{margin-top:1.8em}
+/* page-break control: markers and headings stay with their text */
+.flow .sh{break-after:avoid;break-inside:avoid}
+.flow .pn{break-after:avoid}
+.flow .para>p:first-of-type{break-inside:avoid}
+.flow .txt{break-after:avoid}
+</style></head><body>
+<div class="glow" aria-hidden="true"></div>
+<main class="reader"><header class="rtop"><span id="rt"></span><span id="rk"></span></header>
+<div class="col"><div class="vp"><div class="flow texto" id="flow"></div></div></div>
+<footer class="rbar"><button id="pp" class="pg" aria-label="Previous page">‹</button><span id="pi"></span><button id="pn2" class="pg" aria-label="Next page">›</button></footer></main>
+<button id="fab" aria-label="Menu"><i></i><i></i><i></i></button><div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer"><div class="dh"><div class="eyebrow">Church Year · Lutheran</div><button id="dx" class="ghost">✕</button></div>
+<div class="masthead"><h1>Luther's Church Postil</h1><div class="data" id="dt"></div><div class="badge"><span id="bl"></span></div></div>
+<div class="season-name" id="nm1"></div><div class="day-name" id="nm2"></div><div id="note"></div>
+<div class="day-nav"><button id="prev" class="nv"></button><button id="today" class="back" hidden>Today</button><button id="next" class="nv"></button></div>
+<div class="dsec">Sermons today</div><div id="sers"></div>
+<div class="dsec" id="sh3">Sections</div><div id="secs"></div>
+<div class="dsec">Tools</div><div class="tools"><button id="btnCal">Calendar</button><button id="btnList">All days</button><button id="btnAbout">About</button></div>
+<div class="size"><span>Text size</span><button data-s=".85">A−</button><button data-s="1">A</button><button data-s="1.15">A+</button><button data-s="1.3">A++</button></div>
+<p class="aviso">Sermons from Martin Luther’s <em>Church Postil</em>, <em>The Complete Lenker Edition in One Volume</em>.</p></aside>
+<div class="overlay" id="ov" hidden><div class="panel"><div class="ch"><button id="pm">←</button><div id="ml"></div><button id="nm">→</button><button id="cx" class="ghost">✕</button></div>
+<div class="wd"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div><div class="grid" id="grid"></div></div></div>
+<div class="overlay" id="ov2" hidden><div class="panel"><div class="ch"><div id="ml2">All days of the church year</div><button id="cx2" class="ghost">✕</button></div><div id="alist"></div></div></div>
+<div class="overlay" id="ov3" hidden><div class="panel about"><div class="eyebrow">Welcome</div><h2>Luther’s Church Postil</h2>
+<p class="lead">A day-by-day reader for Martin Luther’s sermons on the Sunday and festival Gospel and Epistle readings of the church year.</p>
+<h3>What it is based on</h3>
+<p>The <em>Church Postil</em> (<em>Kirchenpostille</em>) is Luther’s collection of model sermons, written to be read aloud in the home and the congregation. Each sermon expounds the appointed Gospel or Epistle for a day of the church year.</p>
+<p>The text is taken from <em>Martin Luther’s Church Postil — The Complete Lenker Edition in One Volume</em>, shown unaltered.</p>
+<h3>Which calendar</h3>
+<p>This site follows the <b>old, historic one-year calendar and lectionary</b> that the Postil is built on: Advent, Christmas, Epiphany, Septuagesima, Lent, Easter, Pentecost, and the long season of Sundays after Trinity. It does <b>not</b> use the modern three-year cycle (Years A, B and C), so the readings for a given Sunday are the same every year.</p>
+<h3>How it works</h3>
+<p><b>Today’s sermon opens automatically.</b> The site works out the church year from the date.</p>
+<p><b>No sermon on this date?</b> You are shown the sermon for the current church week, and a note tells you so.</p>
+<p><b>Several sermons on one day?</b> Choose between them under “Sermons today” in the menu.</p>
+<h3>Getting around</h3>
+<p><b>Turn pages</b> with the arrow buttons, the ← → keys, a swipe, or a tap at the edge of the page.</p>
+<p><b>The menu</b> (top right) lets you jump to a section, step to the previous or next postil, change the text size, open the calendar, or browse all days.</p>
+<p>The accent colour follows the liturgical season.</p>
+<button id="aboutGo" class="primary">Start reading</button></div></div>
+<script src="data/manifest.js?v=6"></script><script>
+const NAMES={advent1:'First Sunday in Advent',advent2:'Second Sunday in Advent',advent3:'Third Sunday in Advent',advent4:'Fourth Sunday in Advent',christmas:'Christmas Day',stephen:"St. Stephen's Day",john:"St. John the Evangelist's Day",'xmas-sun':'Sunday after Christmas',newyear:"New Year's Day (Circumcision)",epiphany:'Epiphany',epiph1:'First Sunday after Epiphany',epiph2:'Second Sunday after Epiphany',epiph3:'Third Sunday after Epiphany',epiph4:'Fourth Sunday after Epiphany',epiph5:'Fifth Sunday after Epiphany',septuagesima:'Septuagesima',sexagesima:'Sexagesima',quinquagesima:'Quinquagesima',invocavit:'Invocavit (First Sunday in Lent)',reminiscere:'Reminiscere (Second Sunday in Lent)',oculi:'Oculi (Third Sunday in Lent)',laetare:'Laetare (Fourth Sunday in Lent)',judica:'Judica (Fifth Sunday in Lent)',palm:'Palm Sunday',easter:'Easter Sunday','easter-mon':'Easter Monday','easter-tue':'Easter Tuesday',quasimodo:'Quasimodogeniti (Sunday after Easter)',misericordias:'Misericordias Domini',jubilate:'Jubilate',cantate:'Cantate',rogate:'Rogate',ascension:'Ascension Day',exaudi:'Exaudi (Sunday after Ascension)',pentecost:'Pentecost Sunday','pentecost-mon':'Pentecost Monday','pentecost-tue':'Pentecost Tuesday','pentecost-wed':'Pentecost Wednesday',trinity:'Trinity Sunday'};
+for(let i=1;i<=26;i++)NAMES['trinity-'+i]=ORD(i)+' Sunday after Trinity';
+function ORD(n){const o=['','First','Second','Third','Fourth','Fifth','Sixth','Seventh','Eighth','Ninth','Tenth','Eleventh','Twelfth','Thirteenth','Fourteenth','Fifteenth','Sixteenth','Seventeenth','Eighteenth','Nineteenth','Twentieth','Twenty-First','Twenty-Second','Twenty-Third','Twenty-Fourth','Twenty-Fifth','Twenty-Sixth'];return o[n]}
+const ORDER=['advent1','advent2','advent3','advent4','christmas','stephen','john','xmas-sun','newyear','epiphany','epiph1','epiph2','epiph3','epiph4','epiph5','septuagesima','sexagesima','quinquagesima','invocavit','reminiscere','oculi','laetare','judica','palm','easter','easter-mon','easter-tue','quasimodo','misericordias','jubilate','cantate','rogate','ascension','exaudi','pentecost','pentecost-mon','pentecost-tue','pentecost-wed','trinity'].concat(Array.from({length:26},(_,i)=>'trinity-'+(i+1)));
+const U=(y,m,d)=>Date.UTC(y,m-1,d),DAY=864e5,dow=t=>new Date(t).getUTCDay();
+function easter(y){const a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31),da=((h+l-7*m+114)%31)+1;return U(y,mo,da)}
+function advent1(y){const n=U(y,11,30),w=dow(n);return n+(w<=3?-w:7-w)*DAY}
+// returns {id, exact:bool}
+function dayFor(t){
+ const dt=new Date(t),y=dt.getUTCFullYear(),m=dt.getUTCMonth()+1,d=dt.getUTCDate(),S=t-dow(t)*DAY;
+ if(m==12&&d==25)return{id:'christmas',exact:1};if(m==12&&d==26)return{id:'stephen',exact:1};if(m==12&&d==27)return{id:'john',exact:1};
+ if(m==12&&d>27)return{id:'xmas-sun',exact:dow(t)==0};
+ if(m==1&&d==1)return{id:'newyear',exact:1};if(m==1&&d==6)return{id:'epiphany',exact:1};
+ if(m==1&&d<6)return{id:dow(t)==0?'xmas-sun':'newyear',exact:dow(t)==0};
+ const E=easter(y),off=Math.round((t-E)/DAY),A=advent1(y);
+ if(t>=A&&t<U(y,12,25)){const n=Math.min(4,Math.floor((S-A)/DAY/7)+1);return{id:'advent'+n,exact:dow(t)==0}}
+ const mov=[[-63,'septuagesima'],[-56,'sexagesima'],[-49,'quinquagesima'],[-42,'invocavit'],[-35,'reminiscere'],[-28,'oculi'],[-21,'laetare'],[-14,'judica'],[-7,'palm'],[0,'easter'],[1,'easter-mon'],[2,'easter-tue'],[7,'quasimodo'],[14,'misericordias'],[21,'jubilate'],[28,'cantate'],[35,'rogate'],[39,'ascension'],[42,'exaudi'],[49,'pentecost'],[50,'pentecost-mon'],[51,'pentecost-tue'],[52,'pentecost-wed'],[56,'trinity']];
+ if(off<-63){ // after Epiphany
+  const f=U(y,1,6),first=f+(7-dow(f))*DAY;if(t<first)return{id:'epiphany',exact:0};
+  const n=Math.min(5,Math.floor((S-first)/DAY/7)+1);return{id:'epiph'+n,exact:dow(t)==0}}
+ if(off<56){let r=mov[0];for(const x of mov)if(x[0]<=off)r=x;return{id:r[1],exact:r[0]==off}}
+ const T=Math.round((A-(E+56*DAY))/DAY/7),k=Math.round((S-(E+56*DAY))/DAY/7);
+ if(k==0)return{id:'trinity',exact:dow(t)==0};
+ let n=k;if(k>=T-3){const alt=26-(T-1-k);if(alt>k)n=alt}
+ return{id:'trinity-'+Math.min(n,26),exact:dow(t)==0}}
+const COL={green:['#3B6E4F','Green'],violet:['#5B3A70','Violet'],white:['#C9A227','White'],red:['#A32638','Red']};
+const RN=n=>['','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XXI','XXII','XXIII','XXIV','XXV','XXVI'][n];
+function info(id){let c='white',s='Easter',n='†',m;
+ if(m=id.match(/^advent(\d)/)){c='violet';s='Advent';n=RN(+m[1])}
+ else if(['christmas','xmas-sun','newyear','epiphany','john'].includes(id)){s=id=='epiphany'?'Epiphany':'Christmas'}
+ else if(id=='stephen'){c='red';s='Christmas'}
+ else if(m=id.match(/^epiph(\d)/)){c='green';s='Epiphany';n=RN(+m[1])}
+ else if(['septuagesima','sexagesima','quinquagesima'].includes(id)){c='violet';s='Pre-Lent';n={septuagesima:'LXX',sexagesima:'LX',quinquagesima:'L'}[id]}
+ else if(['invocavit','reminiscere','oculi','laetare','judica'].includes(id)){c='violet';s='Lent';n=RN(['invocavit','reminiscere','oculi','laetare','judica'].indexOf(id)+1)}
+ else if(id=='palm'){c='red';s='Holy Week'}
+ else if(id.startsWith('pentecost')){c='red';s='Pentecost'}
+ else if(id=='trinity'){s='Trinity'}
+ else if(m=id.match(/^trinity-(\d+)/)){c='green';s='Trinity';n=RN(+m[1])}
+ return{color:c,hex:COL[c][0],cname:COL[c][1],season:s,num:n}}
+
+</script><script>
+const $=s=>document.querySelector(s),esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const iso=t=>new Date(t).toISOString().slice(0,10),pd=s=>{const[y,m,d]=s.split('-').map(Number);return U(y,m,d)};
+const now=new Date(),TODAY=U(now.getFullYear(),now.getMonth()+1,now.getDate());
+let curId,sel=TODAY,sers=[],si=0,view=new Date(TODAY),P=0,N=1,W=0,tk=0;const G=32;
+const AB=/(\b(St|Mr|Mrs|Dr|vs|Rev|Matt|Mark|Luke|Cor|Ps|Isa|Jer|Rom|Gal|Eph|Phil|Col|Thess|Tim|Heb|Gen|Ex|Deut|Num|Lev|Jas|Pet|chap|ch|cf|etc|Sam|Kgs|Ezek|Dan|Hos|Zech|Mal|Acts|Rev)|\b[A-Z]|\bv|\bvv)\.$/;
+function chunk(t){if(t.length<650)return[t];const s=t.split(/(?<=[.!?”"’])\s+(?=[A-Z“‘(])/),o=[];let c='';
+ for(const x of s){c+=(c?' ':'')+x;if(c.length>=320&&!AB.test(x)){o.push(c);c=''}}
+ if(c){if(o.length&&c.length<140)o[o.length-1]+=' '+c;else o.push(c)}return o}
+function rp(p,i){if(p.startsWith('## '))return'<h4 class="sh" id="h'+i+'">'+esc(p.slice(3))+'</h4>';
+ if(p.startsWith('> '))return'<p class="scr">'+esc(p.slice(2)).replace(/(^|\s)(\d{1,3})\s(?=[A-Z“‘(\[])/g,'$1<sup class="vn">$2</sup> ')+'</p>';
+ if(/^Text:/.test(p)&&p.length<220)return'<p class="txt">'+esc(p)+'</p>';
+ let m=p.match(/^\[(\d+)\]\s*/),n='';if(m){p=p.slice(m[0].length);n='<span class="pn">'+m[1]+'</span>'}
+ return'<div class="para">'+chunk(p).map((c,x)=>'<p>'+(x?'':n)+esc(c)+'</p>').join('')+'</div>'}
+function sub(t){let p=t.split(/(?<=\.)\s+/),k=0;while(k<3&&p.length-k>1&&p[k].length<70&&/Sunday|Day|Monday|Tuesday|Wednesday|Sermon|Epiphany|Advent|Lent|Trinity|Christmas|Pentecost|Ascension|Quasimodo|Misericordias|Jubilate|Cantate|Rogate|Exaudi|Invocavit|Reminiscere|Oculi|Laetare|Judica|esima|Easter|Eve|Service/i.test(p[k]))k++;return p.slice(k).join(' ')||t}
+const pend={};function load(id,cb){if(window.LP&&LP[id])return cb(LP[id]);if(!MAN[id])return cb(null);if(pend[id])return pend[id].push(cb);pend[id]=[cb];const s=document.createElement('script'),end=v=>{const q=pend[id];delete pend[id];q.forEach(f=>f(v))};s.src='data/'+id+'.js';s.onload=()=>end(LP[id]);s.onerror=()=>{s.remove();end(null)};document.head.appendChild(s)}
+function setColor(h){const r=document.documentElement.style,G={'#3B6E4F':'47,168,102','#5B3A70':'145,86,214','#C9A227':'240,184,28','#A32638':'232,48,79'}[h]||'47,168,102';r.setProperty('--cor',h);r.setProperty('--cs',h+'24');r.setProperty('--g',G);document.querySelector('meta[name=theme-color]').content=h}
+function drawer(o){$('#drawer').classList.toggle('open',o);$('#scrim').classList.toggle('open',o)}
+function go(t,fid){sel=t;const r=fid?{id:fid,exact:1}:dayFor(t),i=info(r.id),my=++tk;curId=r.id;setColor(i.hex);
+ $('#dt').textContent=fid&&dayFor(t).id!=fid?'':new Date(t).toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
+ $('#bl').textContent=i.cname+' · '+i.season;
+ $('#nm1').textContent=NAMES[r.id];$('#nm2').textContent=i.season+' season';$('#rt').textContent=NAMES[r.id];
+ $('#note').innerHTML=r.exact?'':'<div class="note">No sermon is assigned to this exact date, so this is the proper of the current church week.</div>';
+ $('#today').hidden=t==TODAY;try{history.replaceState(null,'','?d='+iso(t))}catch(e){}
+ {const L=ORDER.length,x=ORDER.indexOf(r.id);$('#prev').innerHTML='<small>← Previous postil</small><b>'+NAMES[ORDER[(x-1+L)%L]]+'</b>';$('#next').innerHTML='<small>Next postil →</small><b>'+NAMES[ORDER[(x+1)%L]]+'</b>'}
+ drawer(false);{const f=$('#flow');f.style.transition='none';f.style.transform='none';f.innerHTML='';}P=0;
+ load(r.id,ss=>{if(my!=tk)return;sers=(ss||[]).map(s=>({...s,paras:s.paras.filter(p=>!/^To the reader\b/i.test(p))}));si=0;draw();const L=ORDER.length,x=ORDER.indexOf(r.id);setTimeout(()=>{if(my==tk)load(ORDER[(x+1)%L],()=>{})},800)})}
+const lab=s=>{const n=sers.filter(x=>x.kind==s.kind);return s.kind+(n.length>1?' · Sermon '+(n.indexOf(s)+1):'')};
+function draw(last){const f=$('#flow');
+ if(!sers.length){f.innerHTML='<div class="stitle"><span class="lb">No sermon</span><h2>The postil has no sermon for this day.</h2></div>';$('#rk').textContent='';P=0;lay();lists();return}
+ const s=sers[si];$('#rk').textContent=lab(s);
+ const tx=s.paras.find(p=>/^Text:/.test(p)&&p.length<220),ref=tx?tx.replace(/^Text:\s*/,'').replace(/\.$/,''):sub(s.title);
+ f.innerHTML='<div class="cover"><div class="clb">'+lab(s)+'</div><h1 class="cd">'+esc(NAMES[curId])+'</h1><div class="cref">'+esc(ref)+'</div>'+(tx?'<div class="csub">'+esc(sub(s.title))+'</div>':'')+'<div class="chint">Turn the page →</div></div>'+s.paras.map((p,i)=>p===tx?'':rp(p,i)).join('');
+ P=0;lay();requestAnimationFrame(()=>{lay();if(last){P=N-1;show()}});lists()}
+function lists(){$('#sers').innerHTML=sers.map((s,k)=>'<button class="li'+(k==si?' on':'')+'" data-k="'+k+'"><b>'+lab(s)+'</b><span>'+esc(sub(s.title))+'</span></button>').join('');
+ const h=sers[si]?sers[si].paras.map((p,i)=>[p,i]).filter(x=>x[0].startsWith('## ')):[];
+ $('#secs').innerHTML=h.map(x=>'<button class="li" data-i="'+x[1]+'">'+esc(x[0].slice(3))+'</button>').join('');$('#sh3').hidden=!h.length}
+function lay(){const fl0=$('#flow');requestAnimationFrame(()=>{fl0.style.transition=''});const vp=$('.vp'),fl=$('#flow');W=vp.clientWidth;if(!W)return;fl.style.columnWidth=W+'px';fl.style.columnGap=G+'px';N=Math.max(1,Math.round((fl.scrollWidth+G)/(W+G)));P=Math.min(P,N-1);show()}
+function show(){P=Math.max(0,Math.min(P,N-1));$('#flow').style.transform='translateX('+(-P*(W+G))+'px)';$('#pi').textContent=(P+1)+' / '+N;$('#pp').disabled=P==0&&si==0;$('#pn2').disabled=P==N-1&&si>=sers.length-1}
+function turn(d){if(P+d>=N){if(si<sers.length-1){si++;draw()}}else if(P+d<0){if(si>0){si--;draw(true)}}else{P+=d;show()}}
+$('#pp').onclick=()=>turn(-1);$('#pn2').onclick=()=>turn(1);
+document.addEventListener('keydown',e=>{if(e.key=='ArrowRight')turn(1);if(e.key=='ArrowLeft')turn(-1);if(e.key=='Escape')drawer(false)});
+let sx=0;const col=$('.col');col.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+col.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>45)turn(dx<0?1:-1)},{passive:true});
+col.addEventListener('click',e=>{if(String(getSelection()))return;const r=col.getBoundingClientRect(),x=(e.clientX-r.left)/r.width;if(x>.8)turn(1);else if(x<.2)turn(-1)});
+new ResizeObserver(lay).observe($('.vp'));if(document.fonts)document.fonts.ready.then(lay);
+$('#fab').onclick=()=>drawer(true);$('#dx').onclick=()=>drawer(false);$('#scrim').onclick=()=>drawer(false);
+$('#sers').onclick=e=>{const b=e.target.closest('.li');if(b){si=+b.dataset.k;draw();drawer(false)}};
+$('#secs').onclick=e=>{const b=e.target.closest('.li');if(!b)return;const el=document.getElementById('h'+b.dataset.i);if(el){P=Math.floor((el.offsetLeft+2)/(W+G));show()}drawer(false)};
+function step(d){const id=ORDER[(ORDER.indexOf(curId)+d+ORDER.length)%ORDER.length],t=dateFor(id);go(t||sel,t?null:id)}
+$('#prev').onclick=()=>step(-1);$('#next').onclick=()=>step(1);$('#today').onclick=()=>go(TODAY);
+function scale(v){document.documentElement.style.setProperty('--ts',v);document.querySelectorAll('.size button').forEach(b=>b.classList.toggle('on',b.dataset.s==v));try{localStorage.setItem('ts',v)}catch(e){}requestAnimationFrame(lay)}
+let sv='1';try{sv=localStorage.getItem('ts')||'1'}catch(e){}scale(sv);
+document.querySelector('.size').onclick=e=>{if(e.target.dataset.s)scale(e.target.dataset.s)};
+function cal(){const y=view.getUTCFullYear(),m=view.getUTCMonth(),f=U(y,m+1,1),n=new Date(U(y,m+2,0)).getUTCDate();
+ $('#ml').textContent=new Date(f).toLocaleDateString('en-GB',{month:'long',year:'numeric',timeZone:'UTC'});
+ let h='<span class="cell empty"></span>'.repeat(dow(f));
+ for(let d=1;d<=n;d++){const t=U(y,m+1,d),r=dayFor(t),c=r.exact?info(r.id).hex:'';h+='<button class="cell'+(r.exact?' mk':'')+(t==TODAY?' td':'')+(t==sel?' sel':'')+'" data-t="'+t+'"'+(c?' style="border-color:'+c+';color:'+c+'"':'')+'>'+d+'</button>'}
+ $('#grid').innerHTML=h}
+$('#btnCal').onclick=()=>{view=new Date(sel);cal();$('#ov').hidden=false};$('#cx').onclick=()=>$('#ov').hidden=true;
+$('#ov').onclick=e=>{if(e.target.id=='ov')e.target.hidden=true};
+$('#pm').onclick=()=>{view=new Date(U(view.getUTCFullYear(),view.getUTCMonth(),1)-864e5);cal()};$('#nm').onclick=()=>{view=new Date(U(view.getUTCFullYear(),view.getUTCMonth()+2,1));cal()};
+$('#grid').onclick=e=>{const b=e.target.closest('.cell');if(b&&b.dataset.t){$('#ov').hidden=true;go(+b.dataset.t)}};
+function dateFor(id){const y=new Date(sel).getUTCFullYear();let A=advent1(y);if(sel<A)A=advent1(y-1);for(let i=0;i<400;i++){const t=A+i*864e5,r=dayFor(t);if(r.id==id&&r.exact)return t}return null}
+function alist(){let h='',ps='';for(const id of ORDER){const i=info(id);if(i.season!=ps){h+='<div class="sec">'+i.season+'</div>';ps=i.season}h+='<button class="li'+(id==curId?' on':'')+'" data-id="'+id+'"><i style="background:'+i.hex+'"></i>'+NAMES[id]+'</button>'}$('#alist').innerHTML=h}
+$('#btnList').onclick=()=>{alist();$('#ov2').hidden=false;const o=$('#alist .on');if(o)o.scrollIntoView({block:'center'})};$('#cx2').onclick=()=>$('#ov2').hidden=true;
+$('#ov2').onclick=e=>{if(e.target.id=='ov2')e.target.hidden=true};
+$('#alist').onclick=e=>{const b=e.target.closest('.li');if(!b)return;$('#ov2').hidden=true;const t=dateFor(b.dataset.id);go(t||sel,t?null:b.dataset.id)};
+
+const q=new URLSearchParams(location.search).get('d');go(q&&/^\d{4}-\d\d-\d\d$/.test(q)?pd(q):TODAY);
+
+const ab=$('#ov3');function about(o){ab.hidden=!o;if(!o)try{localStorage.setItem('seen','1')}catch(e){}}
+$('#btnAbout').onclick=()=>{drawer(false);about(true)};$('#aboutGo').onclick=()=>about(false);ab.onclick=e=>{if(e.target===ab)about(false)};
+try{if(!localStorage.getItem('seen'))about(true)}catch(e){about(true)}
+
+</script></body></html>
